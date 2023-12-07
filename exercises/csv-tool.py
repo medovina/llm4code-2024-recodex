@@ -118,6 +118,9 @@ def filter_fge(col, value, file='-'):
 def filter_fgt(col, value, file='-'):
     _filter(file, lambda e: float(e[col]) > float(value))
 
+def filter_ok(file='-'):
+    _filter(file, lambda e: e["exclude"] == "" and e["ref_best_score"] == "1" and (e["links_extern"] == "0" or e["ok"] == "1"))
+
 
 def sort(col, file='-'):
     data = mylib.load_csv(file)
