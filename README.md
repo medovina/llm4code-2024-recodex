@@ -28,20 +28,14 @@ The file exercise/exercises.csv contains metadata about our set of exercises.  T
 * text_length - Length of the exercise description in bytes.
 * locale - "al" if the exercise is in AnonLang, otherwise "en".
 * created_at - A timestamp indicating when the exercise was written.
-* forked_from - The ID of the exercise that this exercise was forked from, if any.
 * assignments_count - The number of times that this exercise has ever been assigned to a group of students.
 * solvers_count - The number of students who have ever solved the exercise.
 * solutions_count - The number of solutions ever submitted by students.
 * attachments_count - The number of attachments in the exercise.
 * runtime - The programming language in which we will ask models to solve the exercise in our evaluation.
-* group_id_1, group_name_1 - The AnonSys group containing this exercise.  In many but not all instances this indicate the course in which the exercise is assigned.
-* group_id_2, group_name_2 - An alternate AnonSys group containing the exercise.
 * course - The course to which this exercise belongs.  We use this field to assign exercises to courses manually if they can't be automatically assigned from group_name_1 and group_name_2.
 * ref_best_score - The best score of any reference solution for the exercise.  If this is not 1, we will exclude the exercise from our evaluation.
-* links_extern - The number of external links in the exercise specification.  If this is non-zero, we will exclude the exercise from evaluation unless the field "ok" is true.
-* exclude - If there is any text in this field, the exercise will be excluded from evaluation.  Typically we use this field to mark duplicates.
-* ok - If this field contains a 1, then we have checked that the exercise can reasonably be included in evaluations even though it has external links.
-* avg_score, ... - More fields with statistics about the exercise's solutions on AnonSys, not documented in detail at this time.
+* avg_score, ... - More fields with statistics about the exercise's solutions on AnonSys, are not documented in detail at this time.
 
 ### Results files
 
