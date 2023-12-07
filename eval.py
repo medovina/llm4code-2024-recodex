@@ -95,7 +95,7 @@ def model_boost():
 results_header = (
             'time,' +
             ('fprint,seed,' if is_gpt else '') +
-            'id,group1,group2,name,runtime,lang,num_atts,sub_atts,' +
+            'id,name,runtime,lang,num_atts,sub_atts,' +
             ('in_tokens,out_tokens,total_tokens,' if is_gpt else '') +
             ('icalls,ecalls,' if interactive else '') +
             ('rep,' if nudge or interactive else '') +
@@ -654,7 +654,7 @@ def output_line(file, e, num_attachments, submitted_attachments, gresults, eval)
     line = (
         f'{datetime.now().isoformat()},' +
         (f'{gresults[0].fingerprint},{seed()},' if is_gpt else '') +
-        f'{e.id},{enc(e.group_name_1)},{enc(e.group_name_2)},{enc(e.name)},{e.runtime},{e.lang},' +
+        f'{e.id},{enc(e.name)},{e.runtime},{e.lang},' +
         f'{num_attachments},{submitted_attachments},' +
         (f'{in_tokens},{out_tokens},{total_tokens},' if is_gpt else ''))
     if interactive:

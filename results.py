@@ -7,8 +7,6 @@ from program import *
 class Result:
     id: str
     name: str
-    group_name_1: str
-    group_name_2: str
     runtime: str
     lang: str
     num_attachments: int
@@ -28,7 +26,7 @@ class Result:
     other_error: int
 
 def parse_result(row):
-    r = Result(row['id'], row['name'], row['group1'], row['group2'], row['runtime'], row['lang'],
+    r = Result(row['id'], row['name'], row['runtime'], row['lang'],
                 int(row['num_atts']), int(row['sub_atts']),
                 int(row.get('in_tokens', '0')),
                 int(row.get('out_tokens', '0')),
