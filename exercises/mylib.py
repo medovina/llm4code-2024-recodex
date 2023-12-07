@@ -121,39 +121,39 @@ def save_csv(csv_file, data, fieldnames=None):
 
 
 #
-# ReCodEx CLI
+# AnonSys CLI
 #
 
 # ID of the system account used to submit GPT solutions
 SYS_USER_ID = 'ad3d451f-41ef-4c70-a234-094d743511f3'
 
 
-def _recodex_call(args, **kwargs):
+def _anonsys_call(args, **kwargs):
     '''
-    Invoke recodex CLI process with given set of arguments.
+    Invoke anonsys CLI process with given set of arguments.
     On success, stdout is returned as string. On error, None is returned and the message is printed out.
     '''
-    res = subprocess.run(['recodex'] + args, capture_output=True, **kwargs)
+    res = subprocess.run(['anonsys'] + args, capture_output=True, **kwargs)
     if res.returncode == 0:
         return res.stdout
     else:
         print(res.stderr.decode('utf8'), file=sys.stderr)
-        raise Exception("Error calling recodex CLI with args: {}".format(" ".join(args)))
+        raise Exception("Error calling anonsys CLI with args: {}".format(" ".join(args)))
 
 
-def _recodex_get_json(args, **kwargs):
-    res = _recodex_call(args, **kwargs)
+def _anonsys_get_json(args, **kwargs):
+    res = _anonsys_call(args, **kwargs)
     return json.loads(res)
 
 
-def recodex_get_ref_solutions(exercise_id):
-    return _recodex_get_json(['exercises', 'get-ref-solutions', '--json', exercise_id])
+def anonsys_get_ref_solutions(exercise_id):
+    return _anonsys_get_json(['exercises', 'get-ref-solutions', '--json', exercise_id])
 
 
-def recodex_get_ref_solution(solution_id):
-    return _recodex_get_json(['exercises', 'get-ref-solution', '--json', solution_id])
+def anonsys_get_ref_solution(solution_id):
+    return _anonsys_get_json(['exercises', 'get-ref-solution', '--json', solution_id])
 
 
-def recodex_resumit_ref_solution(solution_id):
-    _recodex_call(['exercises', 'resubmit-ref-solution', solution_id])
+def anonsys_resumit_ref_solution(solution_id):
+    _anonsys_call(['exercises', 'resubmit-ref-solution', solution_id])
 

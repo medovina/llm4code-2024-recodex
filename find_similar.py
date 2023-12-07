@@ -7,18 +7,18 @@ from Levenshtein import distance
 from exercises import *
 import util
 
-czech = {}
+anonlang = {}
 eng = {}
 
 n = int(sys.argv[1])
 for id, e in islice(id_exercises.items(), n):
-    for lang, map in [('cs', czech), ('en', eng)]:
+    for lang, map in [('al', anonlang), ('en', eng)]:
         p = f'exercises/download-{lang}/{id}.md'
         if os.path.exists(p):
             map[id] = util.read_all(p)
 
-for map in [czech, eng]:
-    print('czech' if map == czech else 'english')
+for map in [anonlang, eng]:
+    print('anonlang' if map == anonlang else 'english')
     dist = []
     for (id1, text1), (id2, text2) in combinations(map.items(), 2):
         d = distance(text1, text2) / max(len(text1), len(text2))

@@ -14,7 +14,7 @@ total_inout_tokens,64353
 === by language ===
 
 language,count,avg_score,passed,compile_error,runtime_error,wrong_output,time_limit,mem_limit,other_error
-cs,61,0.75,73.2%,3.0%,3.0%,17.5%,2.1%,0.9%,0.3%
+al,61,0.75,73.2%,3.0%,3.0%,17.5%,2.1%,0.9%,0.3%
 en,39,0.78,74.7%,3.1%,0.9%,18.7%,0.0%,2.7%,0.0%
 
 === by runtime ===

@@ -1,6 +1,8 @@
+(This .zip file contains an anonymized version of our code/data repository.  In all data and code here, we have the placeholder "AnonSys" in place of our system name and "AnonLang" in place of a certain language, just like in the paper.) 
+
 # Tackling Students' Coding Assignments with LLMs
 
-This repository contains code and data used in producing the paper "Tackling Students' Coding Assignments with LLMs" by Adam Dingle and Martin Kruliš.  It is organized as follows:
+This repository contains code and data used in producing the paper "Tackling Students' Coding Assignments with LLMs" by (anonymous authors).  It is organized as follows:
 
 * Top-level directory: Python code used for running evaluations.
 * examples/ :  Example programs for few-shot prompting as described in section 3.4 of the paper.
@@ -22,9 +24,9 @@ We cannot make the exercises public, because they have many authors who would ne
 The file exercise/exercises.csv contains metadata about our set of exercises.  The fields in this file include
 
 * id - A unique ID for the exercise.
-* name - The exercise name in either Czech or English.
+* name - The exercise name in either AnonLang or English.
 * text_length - Length of the exercise description in bytes.
-* locale - "cs" if the exercise is in Czech, otherwise "en".
+* locale - "al" if the exercise is in AnonLang, otherwise "en".
 * created_at - A timestamp indicating when the exercise was written.
 * forked_from - The ID of the exercise that this exercise was forked from, if any.
 * assignments_count - The number of times that this exercise has ever been assigned to a group of students.
@@ -32,14 +34,14 @@ The file exercise/exercises.csv contains metadata about our set of exercises.  T
 * solutions_count - The number of solutions ever submitted by students.
 * attachments_count - The number of attachments in the exercise.
 * runtime - The programming language in which we will ask models to solve the exercise in our evaluation.
-* group_id_1, group_name_1 - The ReCodEx group containing this exercise.  In many but not all instances this indicate the course in which the exercise is assigned.
-* group_id_2, group_name_2 - An alternate ReCodEx group containing the exercise.
+* group_id_1, group_name_1 - The AnonSys group containing this exercise.  In many but not all instances this indicate the course in which the exercise is assigned.
+* group_id_2, group_name_2 - An alternate AnonSys group containing the exercise.
 * course - The course to which this exercise belongs.  We use this field to assign exercises to courses manually if they can't be automatically assigned from group_name_1 and group_name_2.
 * ref_best_score - The best score of any reference solution for the exercise.  If this is not 1, we will exclude the exercise from our evaluation.
 * links_extern - The number of external links in the exercise specification.  If this is non-zero, we will exclude the exercise from evaluation unless the field "ok" is true.
 * exclude - If there is any text in this field, the exercise will be excluded from evaluation.  Typically we use this field to mark duplicates.
 * ok - If this field contains a 1, then we have checked that the exercise can reasonably be included in evaluations even though it has external links.
-* avg_score, ... - More fields with statistics about the exercise's solutions on ReCodEx, not documented in detail at this time.
+* avg_score, ... - More fields with statistics about the exercise's solutions on AnonSys, not documented in detail at this time.
 
 ### Results files
 
@@ -50,25 +52,25 @@ The columns in the results CSV file have the following meanings:
 * time - The time at which we generated and evaluated this solution.
 * fprint - For GPT models, the fingerprint returned by the OpenAI API.
 * seed - For GPT models, a seed that we sent in the OpenAI query.
-* id - The ReCodEx ID of an exercise.
+* id - The AnonSys ID of an exercise.
 * group1, group2 - The exercise's group IDs, copied from group_name_1 and group_name_2 in exercises.csv.
 * name - The exercise's name in the language in which it was submitted.
 * runtime - The runtime (programming language) in which we evaluated the exercise.
-* lang - The lang of the exercise, either "en" for English or "cs" for Czech.
-* num_atts - The number of attachments that the exercise has in ReCodEx.  Note that each file inside a .zip counts as a separate attachment.  (The .zip file itself does not count as an attachment.)
+* lang - The lang of the exercise, either "en" for English or "al" for AnonLang.
+* num_atts - The number of attachments that the exercise has in AnonSys.  Note that each file inside a .zip counts as a separate attachment.  (The .zip file itself does not count as an attachment.)
 * sub_atts - The number of attachments that eval.py actually submitted for the exercise, which might be less than num_atts if some attachments were not submittable (e.g. image files) or were too large.
 * in_tokens - The count of tokens in the text that was sent to the model, including the prompt, the exercise specification and all attachments.
 * out_tokens - The count of tokens in the text that the model returned.
 * total_tokens - The sum of in_tokens and out_tokens.
-* score - ReCodEx's evaluation score for the solution.  This is the fraction of test cases that passed (note that test cases may have various weights in computing this fraction).
-* tests - The number of test cases in ReCodEx for this exercise.  (If the exercise was not evaluated because the model didn't produce a valid program, this will be 1.)
+* score - AnonSys's evaluation score for the solution.  This is the fraction of test cases that passed (note that test cases may have various weights in computing this fraction).
+* tests - The number of test cases in AnonSys for this exercise.  (If the exercise was not evaluated because the model didn't produce a valid program, this will be 1.)
 * passed - The number of tests that passed.
 * comp_err - The number of tests that failed due to a compilation error.
 * rt_err - The number of tests that failed to a runtime error, such as an array index out of bounds.
 * wrong_output - The number of tests that failed because they produced incorrect output.
 * time_limit - The number of tests that failed because the time limit was exceeded.
 * mem_limit - The number of tests that failed because the memory limit was exceeded.
-* other_err - A 1 in this column means that some other error occurred, e.g. the model did not produce a valid program or the ReCodEx evaluation failed unexpectedly.
+* other_err - A 1 in this column means that some other error occurred, e.g. the model did not produce a valid program or the AnonSys evaluation failed unexpectedly.
 * error_msg - A message giving more details about an other_err.
 
 
@@ -80,7 +82,7 @@ If you wish to repeat our experiments, you will need several things:
 * An account at OpenAI for querying GPT-3.5 and GPT-4.
 * An account in Google Cloud for querying Codey.
 * An account at replicate.com for querying Code Llama.  (Alternately you could modify the code here so that it queries Code Llama somewhere else.)
-* Access to the ReCodEx system for evaluating solutions.  You could attempt to run your own instance of ReCodEx, though setting it up will be complicated.  If you want to access our instance, contact the authors and we can discuss it.
+* Access to the AnonSys system for evaluating solutions.  You could attempt to run your own instance of AnonSys, though setting it up will be complicated.  If you want to access our instance, contact the authors and we can discuss it.
 
 To regenerate our results, delete the "results" and "solutions" directories, then run
 

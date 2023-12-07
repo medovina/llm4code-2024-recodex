@@ -7,7 +7,7 @@
 === by language ===
 
 language,count,avg_score,passed,compile_error,runtime_error,wrong_output,time_limit,mem_limit,other_error
-cs,236,0.77,72.7%,3.6%,4.2%,15.7%,2.0%,1.6%,0.2%
+al,236,0.77,72.7%,3.6%,4.2%,15.7%,2.0%,1.6%,0.2%
 en,323,0.64,62.9%,11.3%,9.4%,13.0%,2.2%,0.8%,0.4%
 
 === by runtime ===

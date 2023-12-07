@@ -21,7 +21,7 @@ def usage():
     print(f'usage: py {sys.argv[0]} <model> [args...]')
     print('  -e <ext>: only evaluate exercises with the given language extension')
     print('  -i: let model make function calls to run code')
-    print('  -l <cs|en>: only evaluate exercises in the given language')
+    print('  -l <al|en>: only evaluate exercises in the given language')
     print('  -m <num>: stop when exercise count reaches the given value')
     print('  -n: nudge for another program if evaluation fails')
     print('  -ps: prompt that you are a strong programmer')
@@ -123,7 +123,7 @@ def valid_attachment(name, size):
 
 def build_spec(e):
     spec = read_all(f'exercises/data/{e.id}.md')
-    spec = re.sub(r'\(<?https://recodex[^)]*\)', '', spec)
+    spec = re.sub(r'\(<?https://anonsys[^)]*\)', '', spec)
     tokens = engine.token_count(spec)
     if tokens > 0.9 * token_limit:
         return None, 0, 0
@@ -264,7 +264,7 @@ def run_program(named_sources, extension, input):
         case 'pl':
             shutil.copy('lang/wrapper.pl', dir)
             names = ' '.join(name for name, _ in named_sources)
-            cmd = f'swipl -g recodex_main wrapper.pl {names}'
+            cmd = f'swipl -g anonsys_main wrapper.pl {names}'
         case 'py':
             cmd = f'python {named_sources[0][0]}'
         case _:
@@ -485,12 +485,12 @@ def extract(model_out, dir):
 
 MAX_QUERIES = 3
 
-recodex_system_user = 'ad3d451f-41ef-4c70-a234-094d743511f3'
+anonsys_system_user = 'ad3d451f-41ef-4c70-a234-094d743511f3'
 
-def recodex_query1(cmd):
+def anonsys_query1(cmd):
     delay = 1
     while True:
-        ret, out, stderr = run_with_stderr(f'recodex {cmd}')
+        ret, out, stderr = run_with_stderr(f'anonsys {cmd}')
         
         if 'Temporary failure in name resolution' in stderr:
             print('name resolution failure, retrying...')
@@ -498,25 +498,25 @@ def recodex_query1(cmd):
         else:
             return ret, out, stderr
 
-def recodex_query(cmd):
-    ret, out, stderr = recodex_query1(cmd)
+def anonsys_query(cmd):
+    ret, out, stderr = anonsys_query1(cmd)
     if ret > 0:
         print(stderr)
-        assert False, 'recodex command failed'
+        assert False, 'anonsys command failed'
     return out
 
-def submit_to_recodex(id, runtime, dir, program):
+def submit_to_anonsys(id, runtime, dir, program):
     paths = [f'{dir}/{name}' for name, _ in program]
     if runtime == 'cs-dotnet-core':
         paths.append('lang/global_implicit.cs')
              
-    for sol in json.loads(recodex_query(f'exercises get-ref-solutions --json {id}')):
-        if sol['authorId'] == recodex_system_user and sol['description'].startswith(model_prefix):
-            recodex_query(f'exercises delete-ref-solution {sol["id"]}')
+    for sol in json.loads(anonsys_query(f'exercises get-ref-solutions --json {id}')):
+        if sol['authorId'] == anonsys_system_user and sol['description'].startswith(model_prefix):
+            anonsys_query(f'exercises delete-ref-solution {sol["id"]}')
 
     cmd = ('exercises add-reference-solution ' +
                 f'-r {runtime} -e {id} -n {model} {" ".join(paths)}')
-    exit_code, stdout, stderr = recodex_query1(cmd)
+    exit_code, stdout, stderr = anonsys_query1(cmd)
     if exit_code > 0:
         print(stderr)
         m = re.search(r'RuntimeError: Received error from API: (.*)\n', stderr)
@@ -531,7 +531,7 @@ def submit_to_recodex(id, runtime, dir, program):
     delay = 1
     while True:
         time.sleep(delay)
-        eval_json = recodex_query(f'exercises get-ref-solution-evaluations --json {solution_id}')
+        eval_json = anonsys_query(f'exercises get-ref-solution-evaluations --json {solution_id}')
         # print(eval_json)
         eval_block = json.loads(eval_json)[0]
         if eval_block['evaluationStatus'] != 'work-in-progress':
@@ -556,8 +556,8 @@ class Evaluation:
     other_error: int = 0
     error_msg: str = ''
 
-def recodex_eval(id, runtime, dir, program):
-    res, error_msg = submit_to_recodex(id, runtime, dir, program)
+def anonsys_eval(id, runtime, dir, program):
+    res, error_msg = submit_to_anonsys(id, runtime, dir, program)
     eval = Evaluation()
 
     if not res:
@@ -758,7 +758,7 @@ for e in exercises:
         programs.append(program)
 
         if i == 0 or program != programs[i - 1]:
-            eval = recodex_eval(e.id, e.runtime, cdir, program)
+            eval = anonsys_eval(e.id, e.runtime, cdir, program)
             evals.append(eval)
             if eval.score == 1.0:
                 break
