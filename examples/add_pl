@@ -1,0 +1,10 @@
+Write a predicate add(+X, +Y, -Z) that is true if Z is the sum of the
+integers X and Y.
+
+Example:
+
+?- add(4, 5, Z).
+Z = 9.
+===
+add(4, 5, Z).
+Z = 9.

@@ -1,0 +1,6 @@
+Write a function 'int add(int x, int y)' that returns the sum of the integers x and y.
+
+For example, add(10, 20) should return 30.
+===
+add(10, 20)
+30

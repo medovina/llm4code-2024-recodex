@@ -1,0 +1,7 @@
+Write a class Add with a public static method 'int add(int x, int y)'
+that returns the sum of the integers x and y.
+
+For example, Add.add(10, 20) should return 30.
+===
+Add.add(10, 20)
+30

@@ -1,0 +1,11 @@
+Write a program that reads two integers, each on a separate line.
+The program should print the sum of the integers on a single output line.
+
+Sample input:
+
+14
+3
+
+Expected output:
+
+17

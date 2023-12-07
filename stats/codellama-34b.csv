@@ -1,0 +1,62 @@
+
+=== all exercises ===
+
+,count,avg_score,passed,compile_error,runtime_error,wrong_output,time_limit,mem_limit,other_error
+(all),559,0.11,10.9%,23.0%,29.3%,31.2%,3.0%,1.2%,1.5%
+
+=== by language ===
+
+language,count,avg_score,passed,compile_error,runtime_error,wrong_output,time_limit,mem_limit,other_error
+cs,236,0.16,15.8%,8.0%,35.3%,35.4%,2.2%,2.1%,1.2%
+en,323,0.07,7.8%,32.4%,25.5%,28.5%,3.5%,0.5%,1.7%
+
+=== by runtime ===
+
+runtime,count,avg_score,passed,compile_error,runtime_error,wrong_output,time_limit,mem_limit,other_error
+arduino-gcc,5,0.00,0.0%,88.9%,0.0%,11.1%,0.0%,0.0%,0.0%
+c-gcc-linux,7,0.09,17.1%,26.8%,0.0%,53.7%,0.0%,0.0%,2.4%
+cs-dotnet-core,105,0.07,7.6%,47.0%,15.4%,26.4%,1.6%,0.0%,2.0%
+cxx-gcc-linux,60,0.06,3.6%,65.5%,0.0%,21.7%,1.6%,3.3%,4.3%
+haskell,27,0.11,10.5%,81.7%,0.0%,3.9%,3.9%,0.0%,0.0%
+java,14,0.02,1.5%,52.3%,15.4%,27.7%,0.0%,0.0%,3.1%
+node-linux,11,0.00,0.0%,0.0%,82.4%,2.9%,0.0%,0.0%,14.7%
+php-linux,14,0.03,2.2%,0.0%,64.1%,28.3%,0.0%,0.0%,5.4%
+prolog,36,0.07,11.7%,3.3%,44.5%,30.4%,7.0%,3.0%,0.0%
+python3,280,0.15,14.6%,0.0%,40.7%,39.3%,3.5%,1.3%,0.6%
+
+=== by attachments ===
+
+attachments,count,avg_score,passed,compile_error,runtime_error,wrong_output,time_limit,mem_limit,other_error
+all,80,0.09,12.5%,29.4%,28.7%,25.1%,0.0%,0.0%,4.3%
+none,429,0.12,11.7%,20.5%,29.0%,33.7%,3.3%,1.4%,0.5%
+partial,50,0.01,2.6%,34.4%,32.7%,19.6%,4.8%,0.6%,5.4%
+
+=== by course ===
+
+course,year,prog_lang,count,avg_score,passed,compile_error,runtime_error,wrong_output,time_limit,mem_limit,other_error
+Introduction to Algorithms,1.0,python,38,0.17,17.3%,0.0%,43.9%,37.4%,0.4%,1.1%,0.0%
+Programming 1,1.0,python,214,0.15,14.9%,0.0%,38.7%,40.2%,4.4%,1.5%,0.3%
+Programming 1 (advanced),1.0,c++,8,0.00,0.0%,45.8%,0.0%,54.2%,0.0%,0.0%,0.0%
+Programming 1 (advanced),1.0,python,10,0.24,18.2%,0.0%,19.7%,59.1%,3.0%,0.0%,0.0%
+Computer Systems,1.5,arduino,5,0.00,0.0%,88.9%,0.0%,11.1%,0.0%,0.0%,0.0%
+Computer Systems,1.5,c++,1,0.00,0.0%,0.0%,0.0%,100.0%,0.0%,0.0%,0.0%
+Programming 2,1.5,c#,78,0.07,8.0%,36.4%,22.1%,29.6%,2.6%,0.0%,1.4%
+Programming 2 (advanced),1.5,c#,2,0.00,0.0%,0.0%,88.9%,0.0%,0.0%,0.0%,11.1%
+Programming 2 (advanced),1.5,c++,9,0.03,4.0%,36.0%,0.0%,28.0%,10.0%,20.0%,2.0%
+C# Language and .NET Framework,2.0,c#,24,0.07,7.4%,67.3%,0.7%,21.7%,0.0%,0.0%,2.9%
+Java,2.0,java,14,0.02,1.5%,52.3%,15.4%,27.7%,0.0%,0.0%,3.1%
+Programming 3,2.0,c,7,0.09,17.1%,26.8%,0.0%,53.7%,0.0%,0.0%,2.4%
+Programming in C++,2.0,c++,32,0.10,6.0%,79.3%,0.0%,9.3%,0.0%,0.0%,5.3%
+Web Applications,2.0,node.js,11,0.00,0.0%,0.0%,82.4%,2.9%,0.0%,0.0%,14.7%
+Web Applications,2.0,php,14,0.03,2.2%,0.0%,64.1%,28.3%,0.0%,0.0%,5.4%
+Advanced C++ Programming,2.5,c++,6,0.00,0.0%,66.7%,0.0%,0.0%,0.0%,0.0%,33.3%
+Introduction to Artificial Intelligence,2.5,python,3,0.00,0.0%,0.0%,75.0%,0.0%,0.0%,0.0%,25.0%
+Non-Procedural Programming,2.5,haskell,27,0.11,10.5%,81.7%,0.0%,3.9%,3.9%,0.0%,0.0%
+Non-Procedural Programming,2.5,prolog,36,0.07,11.7%,3.3%,44.5%,30.4%,7.0%,3.0%,0.0%
+Programming in Python,2.5,python,3,0.00,0.0%,0.0%,0.0%,100.0%,0.0%,0.0%,0.0%
+Introduction to Language Technologies,3.0,python,1,0.00,0.0%,0.0%,100.0%,0.0%,0.0%,0.0%,0.0%
+Parallel Programming,3.5,c#,1,0.00,0.0%,100.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+Parallel Programming,3.5,c++,2,0.00,0.0%,100.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+Data Structures I,4.0,c++,2,0.00,0.0%,100.0%,0.0%,0.0%,0.0%,0.0%,0.0%
+Data Structures I,4.0,python,6,0.00,0.0%,0.0%,93.9%,0.0%,0.0%,0.0%,6.1%
+Large scale optimization,4.0,python,5,0.00,0.0%,0.0%,83.3%,0.0%,0.0%,0.0%,16.7%

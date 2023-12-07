@@ -1,0 +1,6 @@
+Write a function add :: Int -> Int -> Int that computes the sum of two integers.
+
+Example: "add 4 5" will return 9.
+===
+add 4 5
+9
