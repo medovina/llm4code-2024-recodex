@@ -40,7 +40,7 @@ with open(f'exercises/exercises.csv') as f:
                     case 'Programming I and II':
                         p1_map = { 'python3' : 'Programming 1', 'cs-dotnet-core' : 'Programming 2' }
                         course = p1_map[runtime]
-                    case 'Algoritmizace':
+                    case 'Introduction to Algorithms':
                         assert runtime == 'python3'
                         course = 'Introduction to Algorithms'
                     case _:
