@@ -1,0 +1,22 @@
+id,name,description
+arduino-gcc,Arduino,Arduino compiled by GCC (13.2) the same way as C++. Requires special mocking setup.
+bash,Bash,Shell scripts executed with Bash
+c-gcc-linux,C,C language compiled with GCC (13.2)
+cpp-bison-flex,Compilers,C++17 language compiled with GCC (12.2) with Flex (2.6.4) and Bison (3.7.2) tools
+cs-dotnet-core,C#,"C# language compiled and executed by .NET Core 7.0"
+cxx-gcc-linux,C++,C++23 language compiled with GCC (13.2)
+data-linux,Data,Data environment for exercises where users can submit anything and the submission is verified by a custom judge
+freepascal-linux,Pascal,Pascal compiled with FreePascal (3.2.2)
+go,Go,Go compiled with default Go compiler (1.19.10)
+groovy,Groovy,Apache Groovy programming language compiled with groovyc (4.0.6) and executed with java
+haskell,Haskell,Haskell functional language compiled with GHC compiler (8.10.7)
+java,Java,Java compiled and executed in OpenJDK runtime (20.0.2)
+java-maven,Maven,Java projects compiled and executed by Apache Maven (v3.8.4)
+kotlin,Kotlin,Kotlin Programming Language compiled with kotlinc (1.7.22) and executed with java
+node-linux,JS,JavaScript executed in Node.js runtime (18.17.1)
+php-linux,PHP,PHP scripts executed with official PHP interpreter (8.2)
+prolog,Prolog,Prolog scripts executed with SWI Prolog interpreter (9.0.4)
+python3,Python,Python executed in Python (3.11) runtime
+rust,Rust,Rust compiled with rustc compiler (1.66.1)
+rust-cargo,Cargo,Rust projects compiled and executed by cargo.
+scala,Scala,Scala Programming Language compiled with scalac and executed with scala (3.2.1)
