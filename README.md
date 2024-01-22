@@ -33,6 +33,7 @@ The file exercise/exercises.csv contains metadata about our set of exercises.  T
 * runtime - The programming language in which we will ask models to solve the exercise in our evaluation.
 * course - The course to which this exercise belongs.  We use this field to assign exercises to courses manually if they can't be automatically assigned from group_name_1 and group_name_2.
 * ref_best_score - The best score of any reference solution for the exercise.  If this is not 1, we will exclude the exercise from our evaluation.
+* tests_count - number of test cases (for the solution evaluation)
 * avg_score, ... - More fields with statistics about the exercise's solutions on ReCodEx, not documented in detail at this time.
 
 More details can be found in [exercises/README.md](tree/main/exercises).
