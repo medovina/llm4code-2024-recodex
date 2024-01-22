@@ -3,6 +3,9 @@ import sys
 
 
 def merge(key, *files):
+    '''
+    Merge two files (append rows) with compatible columns.
+    '''
     if len(files) == 0:
         return
 
@@ -27,6 +30,9 @@ def merge(key, *files):
 
 
 def join(key, *files):
+    '''
+    Join files with the same rows (add missing columns to the first file).
+    '''
     if len(files) == 0:
         return
 
@@ -52,7 +58,7 @@ def join(key, *files):
                         data[id][f] = add[f]
 
     mylib.save_csv(src_file, data, first.keys())
-    #mylib.print_csv(data, first.keys())
+    # mylib.print_csv(data, first.keys())
 
 
 def cut(file, *cols):
@@ -86,7 +92,8 @@ def diff(file1, file2, key_col, *cols):
         for k in mutual_keys:
             for c in cols:
                 if data1[k].get(c, True) != data2[k].get(c, False):
-                    print("Record {} differs on column {} ({} != {})".format(k, c, data1[k].get(c, "*MISSING*"), data2[k].get(c, "*MISSING*")))
+                    print("Record {} differs on column {} ({} != {})".format(
+                        k, c, data1[k].get(c, "*MISSING*"), data2[k].get(c, "*MISSING*")))
 
 
 def _filter(file, op_lambda):
@@ -118,8 +125,10 @@ def filter_fge(col, value, file='-'):
 def filter_fgt(col, value, file='-'):
     _filter(file, lambda e: float(e[col]) > float(value))
 
+
 def filter_ok(file='-'):
-    _filter(file, lambda e: e["exclude"] == "" and e["ref_best_score"] == "1" and (e["links_extern"] == "0" or e["ok"] == "1"))
+    _filter(file, lambda e: e["exclude"] == "" and e["ref_best_score"] == "1" and (
+        e["links_extern"] == "0" or e["ok"] == "1"))
 
 
 def sort(col, file='-'):
