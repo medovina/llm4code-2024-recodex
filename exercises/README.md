@@ -4,9 +4,66 @@ The manifest of exercises used is in `exercises.csv`. The translation table for 
 
 ### Acknowledgments
 
-The following teachers gave us their kind approval for using their exercises for experiments.
+The following teachers gave us their kind approval for using their exercises for experiments and we would like to extend our thanks to them.
 
-*This entire section was anonymized.*
+- Alster Jan
+- Bednárek David
+- Beneš Jiří
+- Bílý Tomáš
+- Dingle Adam
+- Dvořák Tomáš
+- Faltín Tomáš
+- Faltová Jana
+- Fink Jiří
+- Forstová Lenka
+- Frantál Jiří
+- Hladík Richard
+- Hnětynka Petr
+- Holan Tomáš
+- Husák Robert
+- Hušek Radek
+- Ježek Pavel
+- Klepl Jiří
+- Kleprlík Jan
+- Kliber Filip
+- Kofroň Jan
+- Kratochvíl Miroslav
+- Kruliš Martin
+- Kvasnička Peter
+- Kyjánek Lukáš
+- Liška Martin
+- Luňák Václav
+- Mareš Martin
+- Mayer Jiří
+- Mestek Jakub
+- Mráz František
+- Musil Tomáš
+- Pacovský Jan
+- Pergel Martin
+- Pešková Klára
+- Pilát Martin
+- Pleskot Vojtěch
+- Rosa Rudolf
+- Roskovec Bedřich
+- Rózsa Tibor
+- Šefl Vít
+- Škrobánek Jiří
+- Šmelko Adam
+- Straka Milan
+- Střeleček Jan
+- Suchopárová Gabriela
+- Svoboda Tomáš
+- Töpfer Michal
+- Töpfer Pavel
+- Uhrik Dávid
+- Vašátko Viktor
+- Vysušilová Petra
+- Yaghob Jakub
+- Zavoral Filip
+- Žemlička Michal
+- Zikmund Radek
+- Žlebčík Radek
+
  
 ### Dataset usage conditions
 
